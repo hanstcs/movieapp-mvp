@@ -1,6 +1,6 @@
 # Movie App
 
-Movie app show movie list and the movie detail. The data fetched from TMDb[https://www.themoviedb.org/documentation/api] API. This project using MVP pattern and RxJava.
+This application displays a list of films. This project using MVP pattern.
 
 ## Run test
 
