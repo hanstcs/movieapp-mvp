@@ -1,4 +1,4 @@
-package com.hanstcs.movieapp;
+package com.hanstcs.movieapp.movies;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -7,13 +7,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.hanstcs.movieapp.R;
+
 import java.util.List;
 
 public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolder> {
     private List<String> mMovieList;
 
     MoviesAdapter(List<String> movies) {
-        mMovieList = movies;
+        setList(movies);
+    }
+
+    private void setList(List<String> list) {
+        mMovieList = list;
     }
 
     @NonNull
@@ -34,6 +40,11 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolder
     @Override
     public int getItemCount() {
         return mMovieList.size();
+    }
+
+    public void replaceData(List<String> movies) {
+        setList(movies);
+        notifyDataSetChanged();
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {

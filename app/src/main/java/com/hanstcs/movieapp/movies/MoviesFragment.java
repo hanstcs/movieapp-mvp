@@ -1,4 +1,4 @@
-package com.hanstcs.movieapp;
+package com.hanstcs.movieapp.movies;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -10,10 +10,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.hanstcs.movieapp.R;
+import com.hanstcs.movieapp.repository.MoviesRepository;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class MoviesFragment extends Fragment {
+public class MoviesFragment extends Fragment implements MoviesContract.View {
+
+    private MoviesContract.Presenter mPresenter;
+    private MoviesAdapter mAdapter;
 
     public MoviesFragment() {
     }
@@ -25,6 +31,8 @@ public class MoviesFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        mPresenter = new MoviesPresenter(this, MoviesRepository.getInstance());
     }
 
     @Nullable
@@ -36,6 +44,7 @@ public class MoviesFragment extends Fragment {
 
         RecyclerView rvMovies = root.findViewById(R.id.rvMovies);
         addMoviesRecyclerView(rvMovies);
+        mPresenter.loadMovies();
 
         return root;
     }
@@ -43,14 +52,17 @@ public class MoviesFragment extends Fragment {
     private void addMoviesRecyclerView(RecyclerView rvMovies) {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         rvMovies.setLayoutManager(layoutManager);
-        MoviesAdapter adapter = new MoviesAdapter(getMovies());
-        rvMovies.setAdapter(adapter);
+        mAdapter = new MoviesAdapter(new ArrayList<String>(0));
+        rvMovies.setAdapter(mAdapter);
     }
 
-    private List<String> getMovies() {
-        List<String> movies = new ArrayList<>();
-        movies.add("The lord of the rings");
-        movies.add("The fallen and rise of the rome empire");
-        return movies;
+    @Override
+    public void setPresenter(MoviesContract.Presenter presenter) {
+        mPresenter = presenter;
+    }
+
+    @Override
+    public void showMovies(List<String> movies) {
+        mAdapter.replaceData(movies);
     }
 }

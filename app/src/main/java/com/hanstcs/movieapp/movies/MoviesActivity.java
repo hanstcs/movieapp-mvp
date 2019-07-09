@@ -1,12 +1,11 @@
-package com.hanstcs.movieapp;
+package com.hanstcs.movieapp.movies;
 
-import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+
+import com.hanstcs.movieapp.R;
 
 import static android.support.v4.util.Preconditions.checkNotNull;
 
