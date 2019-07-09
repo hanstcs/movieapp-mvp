@@ -4,8 +4,25 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:text="MOVIES FRAGMENT"
+        android:id="@+id/tvNoContent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent"
+        android:gravity="center_vertical|center"
+        android:text="@string/noMovies"
+        android:visibility="gone"
+        android:textSize="24sp" />
+
+    <LinearLayout
+        android:id="@+id/moviesContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvMovies"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
 
 </RelativeLayout>
