@@ -33,12 +33,18 @@ public class MoviesFragment extends Fragment {
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.movies_fragment, container, false);
+
         RecyclerView rvMovies = root.findViewById(R.id.rvMovies);
+        addMoviesRecyclerView(rvMovies);
+
+        return root;
+    }
+
+    private void addMoviesRecyclerView(RecyclerView rvMovies) {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         rvMovies.setLayoutManager(layoutManager);
         MoviesAdapter adapter = new MoviesAdapter(getMovies());
         rvMovies.setAdapter(adapter);
-        return root;
     }
 
     private List<String> getMovies() {
