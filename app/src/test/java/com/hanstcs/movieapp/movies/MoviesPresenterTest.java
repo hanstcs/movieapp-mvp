@@ -1,8 +1,7 @@
 package com.hanstcs.movieapp.movies;
 
-import com.hanstcs.movieapp.repository.MoviesRepository;
+import com.hanstcs.movieapp.data.repository.MoviesRepository;
 
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
@@ -11,8 +10,6 @@ import org.mockito.MockitoAnnotations;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 public class MoviesPresenterTest {
 

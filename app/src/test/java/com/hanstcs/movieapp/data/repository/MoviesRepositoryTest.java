@@ -1,4 +1,4 @@
-package com.hanstcs.movieapp.repository;
+package com.hanstcs.movieapp.data.repository;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -9,8 +9,6 @@ import org.mockito.MockitoAnnotations;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 public class MoviesRepositoryTest {
 

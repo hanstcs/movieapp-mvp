@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.hanstcs.movieapp.R;
-import com.hanstcs.movieapp.repository.MoviesRepository;
+import com.hanstcs.movieapp.data.repository.MoviesRepository;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.hanstcs.movieapp.repository;
+package com.hanstcs.movieapp.data.repository;
 
 import java.util.ArrayList;
 import java.util.List;

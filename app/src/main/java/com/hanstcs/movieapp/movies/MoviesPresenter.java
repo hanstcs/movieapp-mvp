@@ -1,6 +1,6 @@
 package com.hanstcs.movieapp.movies;
 
-import com.hanstcs.movieapp.repository.MoviesRepository;
+import com.hanstcs.movieapp.data.repository.MoviesRepository;
 
 public class MoviesPresenter implements MoviesContract.Presenter {
 
