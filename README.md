@@ -1,6 +1,7 @@
 # Movie App
 
-This application displays a list of films. This project using MVP pattern.
+This application displays a list of films. The app project can be seen in the repository branch.
+* [Movie App - MVP](https://github.com/hanstcs/movieapp-mvp/tree/movieapp-mvp)
 
 ## Run test
 
