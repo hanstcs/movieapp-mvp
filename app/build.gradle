@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion rootProject.compileSdkVersion
@@ -35,4 +37,12 @@ dependencies {
     androidTestImplementation "com.android.support.test:runner:$rootProject.runnerVersion"
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.esspressoVersion"
     androidTestImplementation "com.android.support.test:rules:$rootProject.runnerVersion"
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+repositories {
+    mavenCentral()
 }

@@ -1,5 +1,7 @@
 package com.hanstcs.movieapp.data.repository;
 
+import com.hanstcs.movieapp.data.Movies;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,7 +14,7 @@ import java.util.List;
 
 public class MoviesRepositoryTest {
 
-    private static List<String> MOVIES;
+    private static List<Movies> MOVIES;
 
     @Mock
     private MoviesRepository mMoviesRepository;
@@ -22,8 +24,8 @@ public class MoviesRepositoryTest {
         MockitoAnnotations.initMocks(this);
 
         MOVIES = new ArrayList<>();
-        MOVIES.add("Lord of The Rings");
-        MOVIES.add("Lord of The Rings 2");
+        MOVIES.add(new Movies("1", "The lord of the rings", "2009-12-10"));
+        MOVIES.add(new Movies("2", "The lord of the rings 2", "2012-12-10"));
     }
 
     @Test

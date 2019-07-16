@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.hanstcs.movieapp.R;
+import com.hanstcs.movieapp.data.Movies;
 import com.hanstcs.movieapp.data.repository.MoviesRepository;
 
 import java.util.ArrayList;
@@ -52,7 +53,7 @@ public class MoviesFragment extends Fragment implements MoviesContract.View {
     private void addMoviesRecyclerView(RecyclerView rvMovies) {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         rvMovies.setLayoutManager(layoutManager);
-        mAdapter = new MoviesAdapter(new ArrayList<String>(0));
+        mAdapter = new MoviesAdapter(new ArrayList<Movies>(0));
         rvMovies.setAdapter(mAdapter);
     }
 
@@ -62,7 +63,7 @@ public class MoviesFragment extends Fragment implements MoviesContract.View {
     }
 
     @Override
-    public void showMovies(List<String> movies) {
+    public void showMovies(List<Movies> movies) {
         mAdapter.replaceData(movies);
     }
 }

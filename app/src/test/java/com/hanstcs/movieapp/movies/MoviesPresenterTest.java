@@ -1,5 +1,6 @@
 package com.hanstcs.movieapp.movies;
 
+import com.hanstcs.movieapp.data.Movies;
 import com.hanstcs.movieapp.data.repository.MoviesRepository;
 
 import org.junit.Before;
@@ -13,7 +14,7 @@ import java.util.List;
 
 public class MoviesPresenterTest {
 
-    private static List<String> MOVIES;
+    private static List<Movies> MOVIES;
 
     @Mock
     private MoviesRepository mMoviesRepository;
@@ -30,8 +31,8 @@ public class MoviesPresenterTest {
         mMoviesPresenter = new MoviesPresenter(mMovieView, mMoviesRepository);
 
         MOVIES = new ArrayList<>();
-        MOVIES.add("The rainbow flowers");
-        MOVIES.add("Clash of Titan");
+        MOVIES.add(new Movies("1", "The lord of the rings", "2009-12-10"));
+        MOVIES.add(new Movies("2", "The lord of the rings 2", "2012-12-10"));
     }
 
     @Test

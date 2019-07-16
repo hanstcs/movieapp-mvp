@@ -8,17 +8,18 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.hanstcs.movieapp.R;
+import com.hanstcs.movieapp.data.Movies;
 
 import java.util.List;
 
 public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolder> {
-    private List<String> mMovieList;
+    private List<Movies> mMovieList;
 
-    MoviesAdapter(List<String> movies) {
+    MoviesAdapter(List<Movies> movies) {
         setList(movies);
     }
 
-    private void setList(List<String> list) {
+    private void setList(List<Movies> list) {
         mMovieList = list;
     }
 
@@ -42,7 +43,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolder
         return mMovieList.size();
     }
 
-    public void replaceData(List<String> movies) {
+    public void replaceData(List<Movies> movies) {
         setList(movies);
         notifyDataSetChanged();
     }
@@ -54,8 +55,8 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolder
             super(itemView);
         }
 
-        private void bind(String movie) {
-            tvMovieTitle.setText(movie);
+        private void bind(Movies movie) {
+            tvMovieTitle.setText(movie.getTitle());
         }
     }
 
