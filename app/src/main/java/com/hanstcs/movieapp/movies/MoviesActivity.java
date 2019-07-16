@@ -7,8 +7,6 @@ import android.support.v7.widget.Toolbar;
 
 import com.hanstcs.movieapp.R;
 
-import static android.support.v4.util.Preconditions.checkNotNull;
-
 public class MoviesActivity extends AppCompatActivity {
 
     @Override
