@@ -16,7 +16,6 @@ public class MoviesPresenterTest {
 
     private static List<Movies> MOVIES;
 
-    @Mock
     private MoviesRepository mMoviesRepository;
 
     @Mock
@@ -25,14 +24,16 @@ public class MoviesPresenterTest {
     private MoviesPresenter mMoviesPresenter;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         MockitoAnnotations.initMocks(this);
 
+        mMoviesRepository = MoviesRepository.Companion.getInstance();
         mMoviesPresenter = new MoviesPresenter(mMovieView, mMoviesRepository);
 
         MOVIES = new ArrayList<>();
         MOVIES.add(new Movies("1", "The lord of the rings", "2009-12-10"));
-        MOVIES.add(new Movies("2", "The lord of the rings 2", "2012-12-10"));
+        MOVIES.add(new Movies("2", "The fallen and rise of the rome empire", "2017-10-25"));
+        MOVIES.add(new Movies("3", "Thor: Ragnarok", "2017-10-25"));
     }
 
     @Test
@@ -42,7 +43,6 @@ public class MoviesPresenterTest {
 
     @Test
     public void loadMoviesFromRepository_showToView() {
-        Mockito.when(mMoviesRepository.getMovies()).thenReturn(MOVIES);
         mMoviesPresenter.loadMovies();
         Mockito.verify(mMovieView).showMovies(MOVIES);
     }
