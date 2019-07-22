@@ -1,6 +1,6 @@
 # Movie App
 
-This application displays a list of films. This project using MVP pattern.
+This application displays a list of films. This project using MVVM pattern.
 
 ## Run test
 
